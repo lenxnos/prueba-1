@@ -71,6 +71,14 @@
 
 @slot('content')
 @include('layouts.navbar')
+
+
+<div class="container">
+  <div class="row">
+    {!! Breadcrumbs::render('home') !!}
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
