@@ -1,6 +1,74 @@
-@extends('layouts.zamora')
+@component('layouts.zamora')
 
-@section('content')
+@slot('zamora')
+
+<style type="text/css">
+
+	.login-title-index{
+		font-size: 50px;
+		margin-top: 5%;
+	}
+
+	@media (max-width: 480px) {
+		.login-title-index{
+			font-size: 30px;
+			margin-top: 5%;
+			text-align: center;
+		}
+
+		#zamora-navbar{
+			display: none;
+		}
+
+		body{
+			margin-top: 10px;
+		}
+
+		footer{
+			font-size: 10px;
+		}
+
+	}
+
+	@-webkit-keyframes color_change {
+		from {  color: #636b6f;}
+		to {  color: black;}
+	}
+	@-moz-keyframes color_change {
+		from {  color: #636b6f;}
+		to {  color: black;}
+	}
+	@-ms-keyframes color_change {
+		from {  color: #636b6f;}
+		to {  color: black;}
+	}
+	@-o-keyframes color_change {
+		from {  color: #636b6f;}
+		to {  color: black;}
+	}
+	@keyframes color_change {
+		from {  color: #636b6f;}
+		to {  color: black;}
+	}
+
+	.fa-hover:hover i{
+
+		-webkit-animation: color_change 1s infinite  alternate;
+		-moz-animation: color_change 1s infinite alternate;
+		-ms-animation: color_change 1s infinite alternate;
+		-o-animation: color_change 1s infinite alternate;
+		animation: color_change 1s infinite alternate;
+
+		color: black;
+	}
+
+</style>
+
+
+
+@endslot
+
+@slot('content')
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -84,4 +152,5 @@
 		</div>
 	</div>
 </div>
-@endsection
+@endslot
+@endcomponent

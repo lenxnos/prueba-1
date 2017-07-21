@@ -13,37 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome/css/font-awesome.css')}} ">
-    <style type="text/css">
-        .navbar-default {
-            border-color: #FF2727;
-        }
-        .login-title-index{
-            font-size: 50px;
-            margin-top: 5%;
-        }
-
-        @media (max-width: 480px) {
-           .login-title-index{
-            font-size: 30px;
-            margin-top: 5%;
-            text-align: center;
-        }
-
-        #zamora-navbar{
-            display: none;
-        }
-
-        body{
-            margin-top: 10px;
-        }
-
-        footer{
-            font-size: 10px;
-        }
-    }
-
-</style>
-
+    {{ $zamora or '' }}
 
 </head>
 <body>
@@ -53,8 +23,7 @@
                 <img class="img-responsive" src="{{ asset('images/cintillo_2017_zamora.jpg') }}">
             </div>
         </nav>
-
-        @yield('content')
+        {{ $content }}
     </div>
     <footer>
         <div class="container">
@@ -68,5 +37,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>
