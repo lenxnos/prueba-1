@@ -14,7 +14,10 @@
 Route::get('/', function () {
     if(Auth::guest()){
     	return redirect('login');
-    };
+    }
+    else{
+    	return redirect('home');
+    }
 });
 
 
@@ -27,4 +30,5 @@ Route::get('home', 'HomeController@index')->name('home');
 
 
 //Plan Obras
+Route::get('planobras/old', 'PlanObraController@old');
 Route::resource('planobras', 'PlanObraController');

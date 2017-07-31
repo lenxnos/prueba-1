@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\PlandeObras;
 use Redirect;
 use Session;
+
+
+
 class PlanObraController extends Controller
 {
-
-
 	 /**
      * Create a new controller instance.
      *
@@ -18,11 +19,18 @@ class PlanObraController extends Controller
 	 public function __construct()
 	 {
 	 	$this->middleware('auth');
+	 	$this->year = date('Y');
 	 }
 
 
 	 public function index(){
-	 	$obras = PlandeObras::all();
+	 	
+	 	$obras = PlandeObras::where('year', '=', $this->year)->get();
+	 	return view('resumen.planobras.index', array('obras' => $obras));
+	 }
+
+	 public function old(){
+	 	$obras = PlandeObras::where('year', '<', $this->year)->get();
 	 	return view('resumen.planobras.index', array('obras' => $obras));
 	 }
 
