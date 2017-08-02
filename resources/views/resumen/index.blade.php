@@ -107,7 +107,7 @@
           <button class="btn btn-default fa-hover" title="Gestor de Partidas">
             <i class="fa fa-list-alt" ></i><br>
             <span>Gestor de Partidas</span>
-          </button>
+          </button>   
           <button class="btn btn-default fa-hover" >
             <i class="fa fa-clock-o"  title="Registro de Fecha"></i><br>
             <span>Registro de Fecha e Info.</span>
@@ -118,14 +118,18 @@
               <span>Registro de Plan de 0bras</span>
             </button>
           </a>
-          <button class="btn btn-default fa-hover" >
-            <i class="fa fa-percent"  title="Financiamiento de Obras"></i><br>
-            <span>Financiamiento de Obras</span>
-          </button>
-          <button class="btn btn-default fa-hover" >
-            <i class="fa fa-money"  title="Financiamiento de Créditos"></i><br>
-            <span>Financiamiento de Créditos</span>
-          </button>
+          <a href="{{Route('financiaobras.index')}}">
+            <button class="btn btn-default fa-hover" >
+              <i class="fa fa-percent"  title="Financiamiento de Obras"></i><br>
+              <span>Financiamiento de Obras</span>
+            </button>
+          </a>
+          <a href="{{Route('financiacreditos.index')}}">
+            <button class="btn btn-default fa-hover" >
+              <i class="fa fa-money"  title="Financiamiento de Créditos"></i><br>
+              <span>Financiamiento de Créditos</span>
+            </button>
+          </a>
           <button class="btn btn-default fa-hover" >
             <i class="fa fa-money"  title="Créditos Adicionales"></i><br>
             <span>Créditos Adicionales</span>

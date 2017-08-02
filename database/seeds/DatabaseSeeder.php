@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Sector;
+use App\FinanciaObras;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,7 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
     	//self::seedSector();
+        //self::seedFinanciero();
     }
+
+    
 
 
 }

@@ -30,5 +30,13 @@ Route::get('home', 'HomeController@index')->name('home');
 
 
 //Plan Obras
-Route::get('planobras/old', 'PlanObraController@old');
+Route::get('planobras/old', 'PlanObraController@old')->name('planobras.old');
 Route::resource('planobras', 'PlanObraController');
+
+//FinanciaObras
+
+Route::resource('financiaobras', 'FinanciaObrasController');
+
+//FinanciaCreditos
+
+Route::resource('financiacreditos', 'FinanciaCreditosController');

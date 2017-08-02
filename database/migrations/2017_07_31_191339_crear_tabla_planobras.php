@@ -17,7 +17,8 @@ class CrearTablaPlanobras extends Migration
             $table->increments('id');
             $table->integer('sector_id')->unsigned();
             $table->foreign('sector_id')->references('id')->on('core_sector_oe');
-            $table->integer('financiamiento_id');
+            $table->integer('financiamiento_id')->unsigned();
+            $table->foreign('financiamiento_id')->references('id')->on('info_pre_ffinanciaobras');
             $table->string('nombre');
             $table->string('year', 4);
             $table->string('estado');
@@ -26,9 +27,7 @@ class CrearTablaPlanobras extends Migration
             $table->integer('avance_financiero');
             $table->integer('avance_fisico');
             $table->string('status');
-            $table->integer('ente_id');
-            $table->integer('municipio_id');
-            $table->timestamps();
+           
         });
     }
 

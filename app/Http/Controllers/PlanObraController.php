@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PlandeObras;
+use App\FinanciaObras;
+use App\Sector;
+use App\Municipio;
 use Redirect;
 use Session;
 
@@ -24,22 +27,28 @@ class PlanObraController extends Controller
 
 
 	 public function index(){
-	 	
 	 	$obras = PlandeObras::where('year', '=', $this->year)->get();
+	 	
 	 	return view('resumen.planobras.index', array('obras' => $obras));
 	 }
 
 	 public function old(){
 	 	$obras = PlandeObras::where('year', '<', $this->year)->get();
-	 	return view('resumen.planobras.index', array('obras' => $obras));
+	 	return view('resumen.planobras.old', array('obras' => $obras));
 	 }
 
 	 public function create(){
-	 	return view('resumen.planobras.create');
+	 	$sector = Sector::orderBy('detalle')->pluck('detalle', 'id');
+	 	$municipios = Municipio::orderBy('nombre')->pluck('nombre', 'id');
+	 	$financiamiento = FinanciaObras::orderBy('nombre')->pluck('nombre', 'id');
+	 	return view('resumen.planobras.create', compact('financiamiento', 'sector', 'municipios'));
 	 }
 
 	 public function store(Request $request){
-	 	$obras = new PlandeObras();
+
+	 	var_dump($request->municipios);
+
+	 	/*$obras = new PlandeObras();
 	 	$obras->nombre = $request->nombre;
 	 	$obras->financiamiento_id = 1;
 	 	$obras->year = $request->anio;
@@ -55,7 +64,7 @@ class PlanObraController extends Controller
 	 	$obras->save();
 	 	Session::flash('message-success', 'Plan de Obra Guardada!!');
 	 	return Redirect::Route('planobras.index');
-
+		*/
 	 }
 
 	}
