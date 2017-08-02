@@ -101,7 +101,7 @@
   margin-right: 5%;
 }
 
-.panel-heading > ul > li.active {
+.panel-heading > ul > li.active{
   color: gray;
   margin-right: 5%;
 }
@@ -141,18 +141,18 @@
           </a>
         </li>
 
+        <li >
+          <a href="{{ Route('planobras.index') }}">
+            <i class="fa fa-list"></i>
+            Listado
+          </a>
+        </li>
+
         <li class="active">
          
           <i class="fa fa-list"></i>
-          Listado
+          Listado (Otros Años)
           
-        </li>
-
-        <li>
-          <a href="{{ Route('planobras.old') }}">
-            <i class="fa fa-list"></i>
-            Listado (Otros Años)
-          </a>
         </li>
 
         
